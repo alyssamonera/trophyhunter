@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import MyEditor from './Editor.js';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 class Form extends Component {
   constructor(){
@@ -12,6 +13,10 @@ class Form extends Component {
       image: ""
     }
   }
+
+  // =========
+  // HANDLERS
+  // =========
 
   onChange = (event) => {
     if (event.target){
@@ -39,9 +44,34 @@ class Form extends Component {
     })
   }
 
+  // ======================
+  // QUILL-SPECIFIC THINGS
+  // ======================
+
+  modules = {
+    toolbar: [
+      [{ 'header': [1, 2, false] }],
+      ['bold', 'italic', 'underline','strike', 'blockquote'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image']
+    ],
+  }
+
+  formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image'
+  ]
+
+  // ======================
+  //        RENDER
+  // ======================
+
   render (){
     return (
       <form onSubmit={this.onSubmit}>
+        <h2> Add a guide </h2>
         <label htmlFor="title">Title</label>
         <input type="text" value={this.state.title} id="title" onChange={this.onChange}/>
 
@@ -55,7 +85,13 @@ class Form extends Component {
         <input type="text" value={this.state.image} id="image" onChange={this.onChange}/>
 
         <label htmlFor="body">Body</label>
-        <MyEditor handleChange={this.onChange} id="body"/>
+        <ReactQuill
+          value={this.state.body}
+          onChange={this.onChange}
+          id="body"
+          modules={this.modules}
+          formats={this.formats}
+          />
 
         <input type="submit" value="Submit" />
       </form>
