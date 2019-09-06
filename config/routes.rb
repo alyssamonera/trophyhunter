@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'site#index'
+
+  get '/guides', to: 'guides#index'
+  get '/guides/:id', to: 'guides#show'
+  post '/guides', to: 'guides#create'
+  delete '/guides/:id', to: 'guides#delete'
+  put '/guides/:id', to: 'guides#update'
 end
