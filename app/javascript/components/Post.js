@@ -20,7 +20,7 @@ class Post extends React.Component {
         </div>
         <div className="post-options">
           <ul>
-            <li>edit guide</li>
+            <li onClick={() => {this.props.handleView('editGuide')}}>edit guide</li>
             <li>delete guide</li>
           </ul>
         </div>
