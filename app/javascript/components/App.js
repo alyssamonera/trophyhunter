@@ -11,8 +11,10 @@ import Main from './Main.js'
 // +++++++++++++++++++
 class App extends React.Component {
 
-
-
+  // +++++++++++++++++++
+  // HANDLERS
+  // +++++++++++++++++++
+  
 
   // +++++++++++++++++++
   // RENDER
