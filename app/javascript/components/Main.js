@@ -22,6 +22,7 @@ class Main extends React.Component {
     fetch('/guides')
       .then(data => data.json())
       .then(jData => {
+        console.log(jData)
         this.setState({ guides: jData })
       })
   }
@@ -75,12 +76,12 @@ class Main extends React.Component {
   render () {
     return (
       <main>
-        {this.state.guides.map((guide) => {
+        {this.state.guides.map(guide =>
           <Post
             key={guide.id}
             guide={guide}
           />
-        })}
+        )}
         <Form handleSubmit={this.addGuide} />
       </main>
     )
