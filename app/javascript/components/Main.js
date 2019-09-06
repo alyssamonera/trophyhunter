@@ -1,7 +1,8 @@
 // +++++++++++++++++++
 // DEPENDENCIES
 // +++++++++++++++++++
-import React from 'react'
+import React from 'react';
+import Form from './Form.js';
 
 
 // +++++++++++++++++++
@@ -22,6 +23,25 @@ class Main extends React.Component {
       .then(jData => {
         this.setState({ guides: jData })
       })
+  }
+
+  addGuide = (guide) => {
+    fetch('/guides', {
+      body: JSON.stringify(guide),
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(createdGuide => {return createdGuide.json()})
+      .then(jsonedGuide => {
+        this.setState(prevState => {
+          prevState.guides.push(jsonedGuide)
+          return {guides: prevState.guides}
+        })
+      })
+      .catch(err => console.log(err))
   }
 
   handleDelete = (id) => {
@@ -54,7 +74,7 @@ class Main extends React.Component {
   render () {
     return (
       <main>
-        <h1>title for now</h1>
+        <Form handleSubmit={this.addGuide} />
       </main>
     )
   }
