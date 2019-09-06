@@ -40,7 +40,7 @@ class Guide
     results = DB.exec(
       <<-SQL
         INSERT INTO guides (title, username, body, url, image)
-        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["url"]}'), '#{opts["image"]}'
+        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["url"]}', '#{opts["image"]}')
         RETURNING id, title, username, body, url, image;
       SQL
     )
