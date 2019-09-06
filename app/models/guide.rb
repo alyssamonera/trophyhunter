@@ -24,4 +24,27 @@ class Guide
     }
   end
 
+  def self.update (id, opts)
+    results = DB.exec(
+      <<-SQL
+        UPDATE guides
+        SET
+          title='#{opts["title"]}',
+          username='#{opts["username"]}',
+          body='#{opts["body"]}',
+          url='#{opts["url"]}'
+        WHERE id=#{id}
+        RETURNING id, title, username, body, url;
+      SQL
+    )
+    result = results.first
+    return {
+      id: result["id"].to_i,
+      title: result["title"],
+      username: result["username"],
+      body: result["body"],
+      url: result["url"]
+    }
+  end
+
 end

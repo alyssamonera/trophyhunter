@@ -5,4 +5,8 @@ class GuidesController < ApplicationController
     render json: Guide.create(params["guide"])
   end
 
+  def update
+    render json: Guide.update(params["id"], params["guide"])
+  end
+
 end
