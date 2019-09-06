@@ -1,12 +1,28 @@
-import React, {Component} from 'react';
+// +++++++++++++++++++
+// DEPENDENCIES
+// +++++++++++++++++++
+import React from 'react';
 import Form from './Form.js';
 
-class Main extends Component {
-  constructor(){
-    super()
+
+// +++++++++++++++++++
+// COMPONENT CLASS
+// +++++++++++++++++++
+class Main extends React.Component {
+
+  constructor(props) {
+    super(props)
     this.state = {
       guides: []
     }
+  }
+
+  fetchGuides = () => {
+    fetch('/guides')
+      .then(data => data.json())
+      .then(jData => {
+        this.setState({ guides: jData })
+      })
   }
 
   addGuide = (guide) => {
@@ -28,13 +44,43 @@ class Main extends Component {
       .catch(err => console.log(err))
   }
 
-  render(){
+  handleDelete = (id) => {
+    fetch(`/guides/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(data => {
+        this.setState(prevState => {
+          const guides = prevState.guides.filter( guide => guide.id !== id)
+          return { guides }
+        })
+      })
+      .catch(err => console.log(err))
+  }
+
+  // +++++++++++++++++++
+  // LIFE CYCLE
+  // +++++++++++++++++++
+  componentDidMount() {
+    this.fetchGuides()
+  }
+
+  // +++++++++++++++++++
+  // RENDER
+  // +++++++++++++++++++
+  render () {
     return (
-      <div>
-        <Form handleSubmit={this.addGuide}/>
-      </div>
+      <main>
+        <Form handleSubmit={this.addGuide} />
+      </main>
     )
   }
 }
 
+// +++++++++++++++++++
+// EXPORT
+// +++++++++++++++++++
 export default Main
