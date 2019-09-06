@@ -54,14 +54,11 @@ class Guide
     }
   end
 
-<<<<<<< HEAD
-=======
   def self.delete(id)
     results = DB.exec("DELETE FROM guides WHERE id=#{id};")
     return { "deleted" => true }
   end
 
->>>>>>> a8f4825fe0b5c3702b1c2019dd228c03f461d1ab
   def self.update (id, opts)
     results = DB.exec(
       <<-SQL
