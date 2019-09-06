@@ -11,29 +11,20 @@ class Post extends React.Component {
   // RENDER
   // +++++++++++++++++++
   render () {
-    return (
+  return (
       <article>
-        {this.state.guides.map((guide) => (
-          <div dangerouslySetInnerHTML={{__html: guide.body}}>
-            <div className="post-header">
-              <h1>{this.props.guide.title}</h1>
-              <h2>{this.props.guide.username}</h2>
-              <h2>{this.props.guide.url}</h2>
-            </div>
-            <div className="post-body">
-              {this.props.guide.body}
-            </div>
-            <div className="post-options">
-              <ul>
-                <li onClick={() =>
-                  {this.props.handleView('editGuide',
-                  this.props.guide)}}>Edit Guide</li>
-                <li onClick={() =>
-                  {this.props.handleDelete(this.props.guide.id)
-                }}>Delete Guide</li>
-              </ul>
-            </div>
-          </div>
+        <div className="post-header">
+          <h1>{this.props.guide.title}</h1>
+        </div>
+        <div className="post-body">
+          {this.props.guide.body}
+        </div>
+        <div className="post-options">
+          <ul>
+            <li>edit guide</li>
+            <li>delete guide</li>
+          </ul>
+        </div>
       </article>
     )
   }
