@@ -22,6 +22,7 @@ class Main extends React.Component {
       .then(data => data.json())
       .then(jData => {
         this.setState({ guides: jData })
+        console.log(this.state.guides);
       })
   }
 
