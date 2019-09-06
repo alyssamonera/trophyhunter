@@ -16,8 +16,7 @@ class Post extends React.Component {
         <div className="post-header">
           <h1>{this.props.guide.title}</h1>
         </div>
-        <div className="post-body">
-          {this.props.guide.body}
+        <div className="post-body" dangerouslySetInnerHTML={{__html: this.props.guide.body}}>
         </div>
         <div className="post-options">
           <ul>
