@@ -3,6 +3,7 @@
 // +++++++++++++++++++
 import React from 'react';
 import Form from './Form.js';
+import Post from './Post.js';
 
 
 // +++++++++++++++++++
@@ -74,7 +75,12 @@ class Main extends React.Component {
   render () {
     return (
       <main>
-        <h1>{this.props.view.pageTitle}</h1>
+        {this.state.guides.map((guide) => {
+          <Post
+            key={guide.id}
+            guide={guide}
+          />
+        })}
         <Form handleSubmit={this.addGuide} />
       </main>
     )
