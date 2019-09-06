@@ -47,6 +47,22 @@ class Main extends React.Component {
       .catch(err => console.log(err))
   }
 
+  handleUpdate = (updateGuide) => {
+    fetch(`/guides/${updateGuide.id}`, {
+      body: JSON.stringify(updateGuide),
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(updatedGuide => {
+        this.props.handleView('index')
+        this.fetchGuides()
+      })
+      .catch(err => console.log(err))
+  }
+
   handleDelete = (id) => {
     fetch(`/guides/${id}`, {
       method: 'DELETE',
@@ -77,13 +93,17 @@ class Main extends React.Component {
   render () {
     return (
       <main>
-        {this.state.guides.map(guide =>
-          <Post
-            key={guide.id}
-            guide={guide}
-          />
-        )}
-        <Form handleSubmit={this.addGuide} />
+        <h1>{this.props.view.pageTitle}</h1>
+        {this.props.view.page === 'index'
+          ? this.state.guides.map(guide => (
+            <Post
+              key={guide.id}
+              guide={guide}
+              handleView={this.props.handleView}
+            />
+          ))
+          : <Form handleSubmit={this.addGuide} />
+        }
       </main>
     )
   }
