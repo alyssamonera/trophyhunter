@@ -3,7 +3,7 @@
 // ======================
 // Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
-import ReactQuill from 'react-quill';
+// import ReactQuill from 'react-quill';
 
 class Form extends Component {
   constructor(){
@@ -141,12 +141,14 @@ class Form extends Component {
           </div>
         </div><br />
         <label htmlFor="body">Body</label>
-        <ReactQuill
-          value={this.state.body}
-          onChange={this.onChange}
-          id="body"
-          modules={this.modules}
-          formats={this.formats} /><br />
+        <input type="text" value={this.state.body} id="body" onChange={this.onChange} />
+         {/*<ReactQuill
+           value={this.state.body}
+           onChange={this.onChange}
+           id="body"
+           modules={this.modules}
+           formats={this.formats} />*/}
+        <br />
         <label htmlFor="tags">Tags</label><br />
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
         <input type="submit" value="Submit" />
