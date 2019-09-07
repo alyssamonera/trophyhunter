@@ -14,19 +14,12 @@ class Header extends React.Component {
           {this.props.handleView('index')}}>
             TROPHY HUNTER
         </h1>
-
-          <button
-            onClick={() =>
-              {this.props.handleView('addGuide')}}>
-                ADD A GUIDE
-          </button><br />
           <form>
             <input
               type="text"
               placeholder="Search"
             />
           </form>
-
       </header>
     )
   }

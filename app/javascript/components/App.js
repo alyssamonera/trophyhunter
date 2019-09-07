@@ -21,7 +21,6 @@ class App extends React.Component {
         title: null,
         username: null,
         body: null,
-        url: null,
         image: null,
         id: null
       }
@@ -36,7 +35,6 @@ class App extends React.Component {
       title: '',
       username: '',
       body: '',
-      url: '',
       image: '',
       id: null
     }
@@ -56,7 +54,6 @@ class App extends React.Component {
           title: guide.title,
           username: guide.username,
           body: guide.body,
-          url: guide.url,
           image: guide.image,
           id: guide.id
         }
@@ -85,9 +82,9 @@ class App extends React.Component {
             view={this.state.view}
             handleView={this.handleView}
             formInputs={this.state.formInputs}/>
+          <Aside handleView={this.handleView}/>
         </div>
       </div>
-
     )
   }
 }
