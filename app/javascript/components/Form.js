@@ -1,3 +1,7 @@
+// ======================
+//     DEPENDENCIES
+// ======================
+// Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -14,9 +18,9 @@ class Form extends Component {
     }
   }
 
-  // =========
-  // HANDLERS
-  // =========
+  // ======================
+  //        HANDLERS
+  // ======================
 
   onChange = (event) => {
     if (event.target){
@@ -41,6 +45,19 @@ class Form extends Component {
       username: "",
       body: "",
       url: ""
+    })
+  }
+
+  // ======================
+  //      LIFE CYCLES
+  // ======================
+  componentDidMount(){
+    this.setState({
+      title: this.props.formInputs.title,
+      username: this.props.formInputs.username,
+      body: this.props.formInputs.body,
+      url: this.props.formInputs.url,
+      image: this.props.formInputs.image
     })
   }
 
@@ -71,7 +88,10 @@ class Form extends Component {
   render (){
     return (
       <form onSubmit={this.onSubmit}>
-        <h2> Add a guide </h2>
+        <h2>
+        {this.props.view.page === "addPage"
+        ? "Add a guide" : "Edit a guide"}
+        </h2>
         <label htmlFor="title">Title</label>
         <input type="text" value={this.state.title} id="title" onChange={this.onChange}/>
 
@@ -90,8 +110,7 @@ class Form extends Component {
           onChange={this.onChange}
           id="body"
           modules={this.modules}
-          formats={this.formats}
-          />
+          formats={this.formats} />
 
         <input type="submit" value="Submit" />
       </form>
