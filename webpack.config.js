@@ -8,5 +8,5 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
   },
-  plugins: [ new webpack.optimize.UglifyJsPlugin({sourceMap: true}), ]
+  plugins: [ new UglifyJsPlugin({sourceMap: true}), ]
 };
