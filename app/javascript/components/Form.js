@@ -13,8 +13,8 @@ class Form extends Component {
       title: "",
       username: "",
       body: "",
-      url: "",
-      image: ""
+      image: "",
+      id: null
     }
   }
 
@@ -32,20 +32,38 @@ class Form extends Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-    const submission = {
-      title: this.state.title,
-      username: this.state.username,
-      body: this.state.body,
-      url: this.state.url,
-      image: this.state.image
+    if (this.checkFields()){
+      const submission = {
+        title: this.state.title,
+        username: this.state.username,
+        body: this.state.body,
+        image: this.state.image,
+        id: this.state.id
+      }
+      if (this.props.view.page === "addGuide") {
+        this.props.handleAdd(submission)
+      }
+      else if (this.props.view.page === "editGuide"){
+        this.props.handleUpdate(submission)
+      }
+      this.setState({
+        title: "",
+        username: "",
+        body: "",
+        image: "",
+        id: null
+      })
+    } else {
+      alert("Please don't leave any fields empty!")
     }
-    this.props.handleSubmit(submission)
-    this.setState({
-      title: "",
-      username: "",
-      body: "",
-      url: ""
-    })
+  }
+
+  checkFields = () => {
+    if (this.state.title && this.state.username && this.state.body && this.state.image){
+      return true
+    } else {
+      return false
+    }
   }
 
   // ======================
@@ -56,8 +74,8 @@ class Form extends Component {
       title: this.props.formInputs.title,
       username: this.props.formInputs.username,
       body: this.props.formInputs.body,
-      url: this.props.formInputs.url,
-      image: this.props.formInputs.image
+      image: this.props.formInputs.image,
+      id: this.props.formInputs.id
     })
   }
 
@@ -89,7 +107,7 @@ class Form extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <h2>
-        {this.props.view.page === "addPage"
+        {this.props.view.page === "addGuide"
         ? "Add a guide" : "Edit a guide"}
         </h2>
         <label htmlFor="title">Title</label>
@@ -98,10 +116,7 @@ class Form extends Component {
         <label htmlFor="username">Username</label>
         <input type="text" value={this.state.username} id="username" onChange={this.onChange}/>
 
-        <label htmlFor="url">Source URL (optional)</label>
-        <input type="text" value={this.state.url} id="url" onChange={this.onChange}/>
-
-        <label htmlFor="image">Image URL (optional)</label>
+        <label htmlFor="image">Image URL</label>
         <input type="text" value={this.state.image} id="image" onChange={this.onChange}/>
 
         <label htmlFor="body">Body</label>
