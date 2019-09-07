@@ -6,7 +6,7 @@ import React from 'react'
 // +++++++++++++++++++
 // COMPONENT CLASS
 // +++++++++++++++++++
-class Post extends React.Component {
+class Show extends React.Component {
 
   // +++++++++++++++++++
   // RENDER
@@ -36,4 +36,4 @@ class Post extends React.Component {
   }
 }
 
-export default Post
+export default Show
