@@ -47,9 +47,9 @@ class Main extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleUpdate = (updateGuide) => {
-    fetch(`/guides/${updateGuide.id}`, {
-      body: JSON.stringify(updateGuide),
+  updateGuide = (guide) => {
+    fetch(`/guides/${guide.id}`, {
+      body: JSON.stringify(guide),
       method: 'PUT',
       headers: {
         'Accept': 'application/json, text/plain, */*',
@@ -58,7 +58,11 @@ class Main extends React.Component {
     })
       .then(updatedGuide => {
         this.props.handleView('index')
-        this.fetchGuides()
+        this.setState(prevState => {
+          let index = prevState.guides.findIndex(eachGuide => eachGuide.id === guide.id)
+          prevState.guides.splice(index, 1, guide)
+          return {guides: prevState.guides}
+        })
       })
       .catch(err => console.log(err))
   }
@@ -102,7 +106,7 @@ class Main extends React.Component {
               handleView={this.props.handleView}
             />
           ))
-          : <Form handleSubmit={this.addGuide} />
+          : <Form handleSubmit={this.addGuide} view={this.props.view} formInputs={this.props.formInputs} />
         }
       </main>
     )

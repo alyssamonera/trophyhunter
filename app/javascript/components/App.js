@@ -62,7 +62,8 @@ class App extends React.Component {
       view: {
         page: view,
         pageTitle: pageTitle
-      }
+      },
+      formInputs: formInputs
     })
   }
 
@@ -76,7 +77,8 @@ class App extends React.Component {
         <div className="content-wrap">
           <Main
             view={this.state.view}
-            handleView={this.handleView}/>
+            handleView={this.handleView}
+            formInputs={this.state.formInputs}/>
         </div>
       </div>
 
