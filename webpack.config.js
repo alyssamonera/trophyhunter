@@ -7,13 +7,5 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
-  },
-  plugins: [ new UglifyJsPlugin({sourceMap: true}), ],
-  module: {
-    rules: [
-      {
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
   }
 };
