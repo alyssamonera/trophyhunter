@@ -1,3 +1,4 @@
+
 /* ++++++++++++++++ */
 /*      FONTS       */
 /* ++++++++++++++++ */
@@ -117,4 +118,18 @@ article:hover {
 
 .guide-buttons li:hover {
   background-color: var(--breakerbay);
+}
+/* RICH TEXT EDITOR */
+/* Source: https://codepen.io/alexkrolick/pen/yvRgab?editors=0110 */
+.ql-editor{
+  min-height: 18em;
+}
+
+.ql-toolbar{
+  margin-top: 1em;
+  display: block;
+  background: #ccc;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+
 }

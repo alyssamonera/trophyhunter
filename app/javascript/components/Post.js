@@ -7,7 +7,7 @@ import React from 'react'
 // COMPONENT CLASS
 // +++++++++++++++++++
 class Post extends React.Component {
-  
+
   // +++++++++++++++++++
   // RENDER
   // +++++++++++++++++++
