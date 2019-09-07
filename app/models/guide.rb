@@ -39,9 +39,9 @@ class Guide
   def self.create opts
     results = DB.exec(
       <<-SQL
-        INSERT INTO guides (title, username, body, url)
-        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["url"]}')
-        RETURNING id, title, username, body, url;
+        INSERT INTO guides (title, username, body, url, image)
+        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["url"]}', '#{opts["image"]}')
+        RETURNING id, title, username, body, url, image;
       SQL
     )
     result = results.first
@@ -50,7 +50,8 @@ class Guide
       title: result["title"],
       username: result["username"],
       body: result["body"],
-      url: result["url"]
+      url: result["url"],
+      image: result["image"]
     }
   end
 
@@ -67,9 +68,10 @@ class Guide
           title='#{opts["title"]}',
           username='#{opts["username"]}',
           body='#{opts["body"]}',
-          url='#{opts["url"]}'
+          url='#{opts["url"]}',
+          image='#{opts["image"]}'
         WHERE id=#{id}
-        RETURNING id, title, username, body, url;
+        RETURNING id, title, username, body, url, image;
       SQL
     )
     result = results.first
@@ -78,7 +80,8 @@ class Guide
       title: result["title"],
       username: result["username"],
       body: result["body"],
-      url: result["url"]
+      url: result["url"],
+      image: result["image"]
     }
   end
 

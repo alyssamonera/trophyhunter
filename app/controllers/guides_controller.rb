@@ -10,6 +10,7 @@ class GuidesController < ApplicationController
   end
 
   def create
+    params["guide"]["body"].gsub! "'", "''"
     render json: Guide.create(params["guide"])
   end
 
