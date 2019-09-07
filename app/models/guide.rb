@@ -7,14 +7,14 @@ class Guide
   end
 
   def self.all
-    results = DB.exec("SELECT * FROM guides;")
+    results = DB.exec("SELECT * FROM guides ORDER BY id DESC;")
     return results.map do |result|
       {
         id: result["id"].to_i,
         title: result["title"],
         username: result["username"],
         body: result["body"],
-        url: result["url"]
+        image: result["image"],
       }
     end
   end
@@ -27,7 +27,7 @@ class Guide
         title: results.first["title"],
         username: results.first["username"],
         body: results.first["body"],
-        url: results.first["url"]
+        image: results.first["image"]
       }
     else
       return {
@@ -39,9 +39,9 @@ class Guide
   def self.create opts
     results = DB.exec(
       <<-SQL
-        INSERT INTO guides (title, username, body, url, image)
-        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["url"]}', '#{opts["image"]}')
-        RETURNING id, title, username, body, url, image;
+        INSERT INTO guides (title, username, body, image)
+        VALUES ('#{opts["title"]}', '#{opts["username"]}', '#{opts["body"]}', '#{opts["image"]}')
+        RETURNING id, title, username, body, image;
       SQL
     )
     result = results.first
@@ -50,7 +50,6 @@ class Guide
       title: result["title"],
       username: result["username"],
       body: result["body"],
-      url: result["url"],
       image: result["image"]
     }
   end
@@ -68,10 +67,9 @@ class Guide
           title='#{opts["title"]}',
           username='#{opts["username"]}',
           body='#{opts["body"]}',
-          url='#{opts["url"]}',
           image='#{opts["image"]}'
         WHERE id=#{id}
-        RETURNING id, title, username, body, url, image;
+        RETURNING id, title, username, body, image;
       SQL
     )
     result = results.first
@@ -80,7 +78,6 @@ class Guide
       title: result["title"],
       username: result["username"],
       body: result["body"],
-      url: result["url"],
       image: result["image"]
     }
   end
