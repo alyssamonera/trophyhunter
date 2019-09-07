@@ -41,6 +41,10 @@ ul, li {
 button {
   font-family: var(--accent-font);
 }
+img {
+  border-radius: 5px;
+}
+
 /* ++++++++++++++ */
 /*     HEADER     */
 /* ++++++++++++++ */
@@ -71,7 +75,7 @@ header > h1 {
 /* +++++++++++++++ */
 .content-wrap{
   width: 100%;
-  height: 760px;
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
