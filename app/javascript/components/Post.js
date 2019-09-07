@@ -18,7 +18,8 @@ class Post extends React.Component {
           <img src={this.props.guide.image}/>
         </div><br />
         <div className="guide-title">
-          <h1>{this.props.guide.title}</h1>
+        <h1 onClick={() => {this.props.handleView('showGuide',
+        this.props.guide.id)}}>{this.props.guide.title}</h1>
         </div>
         <div className="guide-user">
           <h3>Uploaded by <span>{this.props.guide.username}</span></h3>
