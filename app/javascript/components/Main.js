@@ -29,6 +29,7 @@ class Main extends React.Component {
   }
 
   addGuide = (guide) => {
+    console.log(guide);
     fetch('/guides', {
       body: JSON.stringify(guide),
       method: 'POST',
