@@ -28,6 +28,7 @@ class Aside extends React.Component {
             <li>TAG</li>
             <li>TAG</li>
             <li>TAG</li>
+            <li>TAG</li>
           </ul>
         </div>
       </aside>
