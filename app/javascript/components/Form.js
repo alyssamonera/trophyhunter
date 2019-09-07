@@ -124,12 +124,12 @@ class Form extends Component {
 
         <label htmlFor="body">Body</label>
         <input type="text" value={this.state.image} id="body" onChange={this.onChange}/>
-        // <ReactQuill
-        //   value={this.state.body}
-        //   onChange={this.onChange}
-        //   id="body"
-        //   modules={this.modules}
-        //   formats={this.formats} />
+        {/* <ReactQuill
+        value={this.state.body}
+        onChange={this.onChange}
+        id="body"
+        modules={this.modules}
+        formats={this.formats} />*/}
 
         <label htmlFor="tags">Tags</label>
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/>
