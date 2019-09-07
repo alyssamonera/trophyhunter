@@ -82,6 +82,19 @@ class Form extends Component {
     })
   }
 
+  componentDidUpdate(prevProps){
+    if(this.props.formInputs.name !== prevProps.formInputs.name) {
+      this.setState({
+        title: this.props.formInputs.title,
+        username: this.props.formInputs.username,
+        body: this.props.formInputs.body,
+        image: this.props.formInputs.image,
+        tags: this.props.formInputs.tags,
+        id: this.props.formInputs.id
+      })
+    }
+  }
+
   // ======================
   // QUILL-SPECIFIC THINGS
   // ======================
@@ -108,32 +121,36 @@ class Form extends Component {
 
   render (){
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="form">
         <h2>
         {this.props.view.page === "addGuide"
         ? "Add a guide" : "Edit a guide"}
         </h2>
-        <label htmlFor="title">Title</label>
-        <input type="text" value={this.state.title} id="title" onChange={this.onChange}/>
-
-        <label htmlFor="username">Username</label>
-        <input type="text" value={this.state.username} id="username" onChange={this.onChange}/>
-
-        <label htmlFor="image">Image URL</label>
-        <input type="text" value={this.state.image} id="image" onChange={this.onChange}/>
-
+        <div className="form-input-container">
+          <div>
+          <label htmlFor="title">Title</label><br />
+          <input type="text" value={this.state.title} id="title" onChange={this.onChange}/>
+          </div>
+          <div>
+          <label htmlFor="username">Username</label><br />
+          <input type="text" value={this.state.username} id="username" onChange={this.onChange}/>
+          </div>
+          <div>
+          <label htmlFor="image">Image URL</label><br />
+          <input type="text" value={this.state.image} id="image" onChange={this.onChange}/>
+          </div>
+        </div><br />
         <label htmlFor="body">Body</label>
-        <input type="text" value={this.state.image} id="body" onChange={this.onChange}/>
-        {/* <ReactQuill
-        value={this.state.body}
-        onChange={this.onChange}
-        id="body"
-        modules={this.modules}
-        formats={this.formats} />*/}
-
-        <label htmlFor="tags">Tags</label>
-        <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/>
-
+        <input type="text" value={this.state.body} id="body" onChange={this.onChange} />
+         {/*<ReactQuill
+           value={this.state.body}
+           onChange={this.onChange}
+           id="body"
+           modules={this.modules}
+           formats={this.formats} />*/}
+        <br />
+        <label htmlFor="tags">Tags</label><br />
+        <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
         <input type="submit" value="Submit" />
       </form>
     )

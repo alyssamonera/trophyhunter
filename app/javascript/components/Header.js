@@ -14,8 +14,9 @@ class Header extends React.Component {
           {this.props.handleView('index')}}>
             TROPHY HUNTER
         </h1>
-          <form>
+          <form >
             <input
+              className="search"
               type="text"
               placeholder="Search"
             />

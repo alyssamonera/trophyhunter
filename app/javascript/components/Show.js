@@ -12,7 +12,7 @@ class Show extends React.Component {
   // RENDER
   // +++++++++++++++++++
   render () {
-  return (
+    return (
       <article>
         <div className="guide-image">
           <img src={this.props.guide.image}/>
@@ -24,6 +24,9 @@ class Show extends React.Component {
           <h3>Uploaded by <span>{this.props.guide.username}</span></h3>
         </div><br />
         <div className="guide-body" dangerouslySetInnerHTML={{__html: this.props.guide.body}}>
+        </div><br />
+        <div className="guide-tags">
+          <h4>{this.props.guide.tags}</h4>
         </div><br />
         <div className="guide-buttons">
           <ul>
