@@ -73,7 +73,7 @@ header input {
 /*      ASIDE      */
 /* +++++++++++++++ */
 .content-wrap{
-  width: width: 95%;
+  width: 95%;
   display: flex;
   flex-direction: row;
 }
@@ -138,6 +138,9 @@ article {
   transition: 0.3s;
   border-radius: 5px;
   padding: 60px;
+}
+article img {
+  width: 80%;
 }
 h3 > span {
   color: var(--breakerbay);
