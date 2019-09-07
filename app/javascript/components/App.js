@@ -24,6 +24,14 @@ class App extends React.Component {
         image: null,
         tags: null,
         id: null
+      },
+      currentGuide: {
+        title: null,
+        username: null,
+        body: null,
+        image: null,
+        tags: null,
+        id: null
       }
     }
   }
@@ -40,12 +48,28 @@ class App extends React.Component {
       tags: '',
       id: null
     }
+    let currentGuide = {
+      title: '',
+      username: '',
+      body: '',
+      image: '',
+      tags: '',
+      id: null
+    }
     switch (view) {
       case 'index':
         pageTitle = 'NEW & UPDATED GAME GUIDES'
         break
       case 'show':
         pageTitle = 'GUIDE'
+        currentGuide = {
+          title: guide.title,
+          username: guide.username,
+          body: guide.body,
+          image: guide.image,
+          tags: guide.tags,
+          id: guide.id
+        }
         break
       case 'addGuide':
         pageTitle = 'ADD GUIDE'
@@ -69,7 +93,8 @@ class App extends React.Component {
         page: view,
         pageTitle: pageTitle
       },
-      formInputs: formInputs
+      formInputs: formInputs,
+      currentGuide: currentGuide
     })
   }
 
@@ -84,7 +109,8 @@ class App extends React.Component {
           <Main
             view={this.state.view}
             handleView={this.handleView}
-            formInputs={this.state.formInputs}/>
+            formInputs={this.state.formInputs}
+            currentGuide={this.state.currentGuide}/>
           <Aside handleView={this.handleView}/>
         </div>
       </div>

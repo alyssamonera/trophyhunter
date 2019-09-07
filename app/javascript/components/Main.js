@@ -4,6 +4,8 @@
 import React from 'react';
 import Form from './Form.js';
 import Post from './Post.js';
+import Show from './Show.js';
+
 
 
 // +++++++++++++++++++
@@ -100,7 +102,13 @@ class Main extends React.Component {
     return (
       <main>
         <h1>{this.props.view.pageTitle}</h1>
-        {this.props.view.page === 'index'
+        {this.props.currentGuide.title ?
+          <Show
+              guide={this.props.currentGuide}
+              handleDelete={this.handleDelete}
+              handleView={this.props.handleView}
+          />
+        : this.props.view.page === 'index'
           ? this.state.guides.map(guide => (
             <Post
               key={guide.id}
@@ -113,8 +121,11 @@ class Main extends React.Component {
               handleAdd={this.addGuide}
               handleUpdate={this.updateGuide}
               formInputs={this.props.formInputs}
-              view={this.props.view} />
+              view={this.props.view}
+            />
         }
+
+
       </main>
     )
   }
