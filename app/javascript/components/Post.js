@@ -25,6 +25,13 @@ class Post extends React.Component {
         </div><br />
         <div className="guide-body" dangerouslySetInnerHTML={{__html: this.props.guide.body}}>
         </div><br />
+        <div className="guide-tags">
+          <ul>
+            {this.props.guide.tags.split(", ").map((tag, index) =>
+            <li key={index}> #{tag} </li>
+            )}
+          </ul>
+        </div>
         <div className="guide-buttons">
           <ul>
             <li onClick={() => {this.props.handleView('editGuide', this.props.guide)}}>EDIT GUIDE</li>
