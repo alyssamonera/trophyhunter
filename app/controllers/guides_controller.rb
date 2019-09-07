@@ -19,6 +19,7 @@ class GuidesController < ApplicationController
   end
 
   def update
+    params["guide"]["body"].gsub! "'", "''"
     render json: Guide.update(params["id"], params["guide"])
   end
 

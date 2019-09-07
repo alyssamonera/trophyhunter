@@ -40,8 +40,9 @@ class Main extends React.Component {
     })
       .then(createdGuide => {return createdGuide.json()})
       .then(jsonedGuide => {
+        this.props.handleView('index')
         this.setState(prevState => {
-          prevState.guides.push(jsonedGuide)
+          prevState.guides.unshift(jsonedGuide)
           return {guides: prevState.guides}
         })
       })
@@ -109,8 +110,8 @@ class Main extends React.Component {
             />
           ))
           : <Form
-              handleSubmit={this.addGuide}
-              handleUpdate={this.handleUpdate}
+              handleAdd={this.addGuide}
+              handleUpdate={this.updateGuide}
               formInputs={this.props.formInputs}
               view={this.props.view} />
         }
