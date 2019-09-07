@@ -139,6 +139,9 @@ article {
   border-radius: 5px;
   padding: 60px;
 }
+article img {
+  width: 80%;
+}
 h3 > span {
   color: var(--breakerbay);
 }

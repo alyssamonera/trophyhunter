@@ -15,7 +15,7 @@ class Show extends React.Component {
   return (
       <article>
         <div className="guide-image">
-          <img src="{this.props.guide.image}"/>
+          <img src={this.props.guide.image}/>
         </div><br />
         <div className="guide-title">
           <h1>{this.props.guide.title}</h1>
