@@ -22,6 +22,7 @@ class App extends React.Component {
         username: null,
         body: null,
         image: null,
+        tags: null,
         id: null
       }
     }
@@ -36,6 +37,7 @@ class App extends React.Component {
       username: '',
       body: '',
       image: '',
+      tags: '',
       id: null
     }
     switch (view) {
@@ -55,6 +57,7 @@ class App extends React.Component {
           username: guide.username,
           body: guide.body,
           image: guide.image,
+          tags: guide.tags,
           id: guide.id
         }
         break

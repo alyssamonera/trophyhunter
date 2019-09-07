@@ -13,6 +13,7 @@ class Form extends Component {
       username: "",
       body: "",
       image: "",
+      tags: "",
       id: null
     }
   }
@@ -37,6 +38,7 @@ class Form extends Component {
         username: this.state.username,
         body: this.state.body,
         image: this.state.image,
+        tags: this.state.tags,
         id: this.state.id
       }
       if (this.props.view.page === "addGuide") {
@@ -50,6 +52,7 @@ class Form extends Component {
         username: "",
         body: "",
         image: "",
+        tags: "",
         id: null
       })
     } else {
@@ -74,6 +77,7 @@ class Form extends Component {
       username: this.props.formInputs.username,
       body: this.props.formInputs.body,
       image: this.props.formInputs.image,
+      tags: this.props.formInputs.tags,
       id: this.props.formInputs.id
     })
   }
@@ -125,6 +129,9 @@ class Form extends Component {
           id="body"
           modules={this.modules}
           formats={this.formats} />
+
+        <label htmlFor="tags">Tags</label>
+        <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/>
 
         <input type="submit" value="Submit" />
       </form>
