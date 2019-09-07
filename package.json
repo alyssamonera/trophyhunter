@@ -19,6 +19,6 @@
     "webpack-dev-server": "^3.8.0"
   },
   "engines": {
-    "yarn": "1.17.3"
+    "yarn": "1.16.0"
   }
 }
