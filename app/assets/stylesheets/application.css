@@ -1,3 +1,124 @@
+
+/* ++++++++++++++++ */
+/*      FONTS       */
+/* ++++++++++++++++ */
+@import url('https://fonts.googleapis.com/css?family=Monda|Open+Sans&display=swap');
+
+
+/* ++++++++++++++++ */
+/*    VARIABLES     */
+/* ++++++++++++++++ */
+:root {
+  /*FONTS*/
+  --main-font: 'Open Sans';
+  --accent-font: 'Monda';
+  /*COLOR*/
+  --woodsmoke: #0B0C10;
+  --dark-gray: #1F2833;
+  --gray: #25303d;
+  --light-gray: #C5C6C7;
+  --cyan: #66FCF1;
+  --breakerbay: #45A29E;
+}
+
+/* +++++++++++++++ */
+/*     GENERAL     */
+/* +++++++++++++++ */
+body {
+  font-family: var(--main-font);
+  color: var(--woodsmoke);
+  margin: 0 auto;
+}
+h1 {
+  margin: 0;
+}
+ul, li {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ++++++++++++++ */
+/*     HEADER     */
+/* ++++++++++++++ */
+header {
+  background: var(--woodsmoke);
+  background-image: url('https://images.unsplash.com/photo-1519933045055-2e2d61a64bcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=10');
+  background-position: center;
+  background-size: cover;
+  /* background-image: linear-gradient(to bottom right, var(--woodsmoke), var(--gray)); */
+  margin: 0;
+  height: 190px;
+  color: var(--cyan);
+  font-size: 2em;
+}
+header > h1 {
+  margin-left: 20px;
+  cursor: pointer;
+}
+header input, header button {
+  margin-right: 20px;
+  float: right;
+}
+header input {
+  width: 30%;
+
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* +++++++++++++++ */
+/*      ASIDE      */
+/* +++++++++++++++ */
+
+
+
+/* ++++++++++++++ */
+/*      MAIN      */
+/* ++++++++++++++ */
+main {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+
+/* ++++++++++++++ */
+/*      POST      */
+/* ++++++++++++++ */
+article {
+  width: 60%;
+  /* background-color: var(--woodsmoke); */
+  /* color: white; */
+  text-align: justify;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  transition: 0.3s;
+  border-radius: 5px;
+  padding: 60px;
+}
+
+article:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.guide-buttons ul {
+  display: flex;
+}
+.guide-buttons li {
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+  padding: 8px 0;
+  margin-right: 10px;
+  border-radius: 5px;
+  background-color: var(--gray);
+  color: white;
+}
+
+.guide-buttons li:hover {
+  background-color: var(--breakerbay);
+}
 /* RICH TEXT EDITOR */
 /* Source: https://codepen.io/alexkrolick/pen/yvRgab?editors=0110 */
 .ql-editor{
@@ -10,4 +131,5 @@
   background: #ccc;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
+
 }

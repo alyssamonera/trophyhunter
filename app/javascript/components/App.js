@@ -22,7 +22,8 @@ class App extends React.Component {
         username: null,
         body: null,
         url: null,
-        image: null
+        image: null,
+        id: null
       }
     }
   }
@@ -36,11 +37,15 @@ class App extends React.Component {
       username: '',
       body: '',
       url: '',
-      image: ''
+      image: '',
+      id: null
     }
     switch (view) {
       case 'index':
         pageTitle = 'NEW & UPDATED GAME GUIDES'
+        break
+      case 'show':
+        pageTitle = 'GUIDE'
         break
       case 'addGuide':
         pageTitle = 'ADD GUIDE'
@@ -52,7 +57,8 @@ class App extends React.Component {
           username: guide.username,
           body: guide.body,
           url: guide.url,
-          image: guide.image
+          image: guide.image,
+          id: guide.id
         }
         break
       default:
@@ -73,7 +79,7 @@ class App extends React.Component {
   render () {
     return (
       <div className="body-wrap">
-        <Header/>
+        <Header handleView={this.handleView}/>
         <div className="content-wrap">
           <Main
             view={this.state.view}
