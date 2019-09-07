@@ -4,6 +4,7 @@
 import React from 'react';
 import Form from './Form.js';
 import Post from './Post.js';
+// import Preview from './Preview.js';
 
 
 // +++++++++++++++++++
@@ -100,9 +101,14 @@ class Main extends React.Component {
               key={guide.id}
               guide={guide}
               handleView={this.props.handleView}
+              handleDelete={this.handleDelete}
             />
           ))
-          : <Form handleSubmit={this.addGuide} />
+          : <Form
+              handleSubmit={this.addGuide}
+              handleUpdate={this.handleUpdate}
+              formInputs={this.props.formInputs}
+              view={this.props.view} />
         }
       </main>
     )
