@@ -4,7 +4,6 @@
 // Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 
 class Form extends Component {
   constructor(){
