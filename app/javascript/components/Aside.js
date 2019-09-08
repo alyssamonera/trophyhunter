@@ -12,8 +12,8 @@ class Aside extends React.Component {
   // +++++++++++
   render () {
     return (
-      <aside>
-          <ul className="favorites dropdown">
+      <aside>FAVORITES
+          <ul className="favorites">
             {this.props.faves.map((fave, index) =>
             <li key={index}
                 onClick={() => {this.props.handleView("show", fave)}}>

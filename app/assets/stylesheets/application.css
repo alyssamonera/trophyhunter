@@ -334,36 +334,230 @@ footer {
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  //CSS
+  .header-btn {
+    display: flex;
+    flex-direction: row;
+    width: 55%;
+    height: 50px;
+    margin: 20px 15px 0 0;
+    float: right;
+    line-height: 0;
+  }
+  .guide-image {
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+  }
+  .guide-image img {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .post-article {
+    width: 100%;
+    height: 350px;
+    text-align: left;
+  }
+  .show-article {
+    width: 80%;
+    text-align: justify;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 
 }
-
-/*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-  //CSS
-
-}
-
-/*
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
 
 @media (min-width: 481px) and (max-width: 767px) {
-
-  //CSS
+  header {
+    height: 180px
+  }
+  header > h1 {
+    font-size: 1em;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    line-height: 60px;
+  }
+  .header-btn {
+    width: 90%;
+    float:none;
+    margin: 0 auto;
+    line-height: 0;
+  }
+  main {
+    margin: 0 auto;
+  }
+  main > h1 {
+    line-height: 1em;
+    margin-top: 40px;
+  }
+  .mainpg-btn, .addGuide-btn {
+    border: 1px solid var(--cyan);
+    background: var(--dark-gray);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+  }
+  .mainpg-btn {
+    margin-bottom: 10px;
+  }
+  aside {
+    font-family: var(--accent-font);
+    color: white;
+    width: 38%;
+    float: right;
+    position: relative;
+    height: 30px;
+    display: inline-block;
+    position: fixed;
+    text-align: center;
+    margin: 0;
+    background: var(--lighter-gray);
+  }
+  .favorites {
+    background: var(--dark-gray);
+    margin: 0;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .favorites li {
+    font-size: 0.8em;
+    display: block;
+    background: var(--dark-gray);
+  }
+  .favorites li:hover {
+    cursor: pointer;
+  }
+  .favorites {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    display:none;
+    transition: all 0.5s ease;
+  }
+  aside:hover > .favorites, .favorite li:hover {
+    visibility: visible;
+    display: block;
+    opacity: 1;
+  }
+  .guide-contents-wrap {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  .text-wrap {
+    width: 100%;
+    font-size: 0.8em;
+  }
+  .post-article {
+    height: 350px;
+    margin: 5px 5px;
+    padding: 0;
+  }
+  .guide-title {
+    border-radius: 0;
+  }
+  .guide-user > h4 {
+    margin: 10px 0 0 5px;
+  }
+  .guide-tags > ul {
+    margin: 0 0 10px 5px;
+  }
+  .guide-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+  .guide-image img {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .guide-buttons {
+    width: 100%;
+    float: none;
+  }
+  .guide-buttons li {
+    font-size: 0.8em;
+    padding: 3px 0;
+    border-radius: 0;
+  }
+  .edit-btn, .fav-btn {
+    margin-right: 3px;
+  }
+  footer {
+    text-align: center;
+    font-size: 10px;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 50px;
+    color: white;
+  }
+  .footer-names {
+    background: var(--gray);
+    padding: 10px 0;
+  }
+  .copy {
+    background: var(--lighter-gray);
+    height: 20px;
+    padding: 5px 0;
+  }
+  form input[type=submit] {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--woodsmoke);
+    color: white;
+    border: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    float: right;
+  }
+  .form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  form label {
+    font-family: var(--accent-font);
+  }
+  .form-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-input-container div{
+    width: 90%;
+  }
+  #tags {
+    width: 90%;
+  }
+  textarea {
+    width: 98%;
+  }
+  .form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .show-article {
+    width: 100%;
+    font-size: 0.8em;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .show-guide-image img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  h3 > span {
+    color: var(--breakerbay);
+  }
 
 }
 
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
 
 @media (min-width: 320px) and (max-width: 480px) {
 
@@ -382,6 +576,13 @@ footer {
     margin: 0 auto;
     line-height: 0;
   }
+  main {
+    margin: 0 auto;
+  }
+  main > h1 {
+    line-height: 1em;
+    margin-top: 20px;
+  }
   .mainpg-btn, .addGuide-btn {
     border: 1px solid var(--cyan);
     background: var(--dark-gray);
@@ -394,7 +595,7 @@ footer {
     margin-bottom: 10px;
   }
   aside {
-    width: 100%;
+    width: 50%;
     float: none;
     position: relative;
     height: 50px;
@@ -406,17 +607,142 @@ footer {
     background: var(--dark-gray);
     background-image: linear-gradient(var(--woodsmoke) 40%, var(--lighter-gray));
   }
-  .dropdown {
+  .favorites {
+    background: var(--dark-gray);
+  }
+  .favorites li {
+    display: block;
+    background: var(--dark-gray);
+  }
+  .favorites li:hover {
+    cursor: pointer;
+  }
+  .favorites {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    display: none;
+    display:none;
+    transition: all 0.5s ease;
   }
-  .dropdown li {
+  aside:hover > .favorites, .favorite li:hover {
+    visibility: visible;
     display: block;
+    opacity: 1;
   }
-  .dropdown:hover .dropdown-content{
-    display: block;
+  .guide-contents-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .text-wrap {
+    width: 100%;
+    font-size: 0.8em;
+  }
+  .post-article {
+    height: 260px;
+    margin: 5px 5px;
+    padding: 0;
+  }
+  .guide-title {
+    border-radius: 0;
+  }
+  .guide-user > h4 {
+    margin: 10px 0 0 5px;
+  }
+  .guide-tags > ul {
+    margin: 0 0 10px 5px;
+  }
+  .guide-image {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+  }
+  .guide-image img {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .guide-buttons {
+    width: 100%;
+    float: none;
+  }
+  .guide-buttons li {
+    font-size: 0.5em;
+    padding: 3px 0;
+    border-radius: 0;
+  }
+  .edit-btn, .fav-btn {
+    margin-right: 3px;
+  }
+  footer {
+    text-align: center;
+    font-size: 10px;
+    bottom:0;
+    left:0;
+    width:100%;
+    height: 50px;
+    color: white;
+  }
+  .footer-names {
+    background: var(--gray);
+    padding: 10px 0;
+  }
+  .copy {
+    background: var(--lighter-gray);
+    height: 20px;
+    padding: 5px 0;
+  }
+  form input[type=submit] {
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--woodsmoke);
+    color: white;
+    border: 0;
+    font-size: 1em;
+    text-transform: uppercase;
+    float: right;
+  }
+  .form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  form label {
+    font-family: var(--accent-font);
+  }
+  .form-input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-input-container div{
+    width: 90%;
+  }
+  #tags {
+    width: 90%;
+  }
+  textarea {
+    width: 98%;
+  }
+  .form {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .show-article {
+    width: 100%;
+    font-size: 0.8em;
+    text-align: left;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .show-guide-image img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  h3 > span {
+    color: var(--breakerbay);
   }
 
 }

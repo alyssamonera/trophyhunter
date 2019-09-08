@@ -73,7 +73,7 @@ class Post extends React.Component {
               }
 
               <li className="edit-btn" onClick={() => {this.props.handleView('editGuide', this.props.guide)}}>EDIT GUIDE</li>
-              <li onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>
+              <li className="delete-btn" onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>
             </ul>
           </div>
 
