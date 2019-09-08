@@ -107,6 +107,8 @@ class App extends React.Component {
         faves = JSON.parse(localStorage.getItem("faves"))
       } else {
         faves = []
+        let jsonedFaves = JSON.stringify(faves)
+        localStorage.setItem("faves", jsonedFaves)
       }
       prevState.faves = faves
       return {faves: prevState.faves}
