@@ -16,7 +16,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      guides: []
+      guides: [],
+      faves: []
     }
   }
 
@@ -24,14 +25,11 @@ class Main extends React.Component {
     fetch('/guides')
       .then(data => data.json())
       .then(jData => {
-        console.log(jData)
         this.setState({ guides: jData })
-        console.log(this.state.guides);
       })
   }
 
   addGuide = (guide) => {
-    console.log(guide);
     fetch('/guides', {
       body: JSON.stringify(guide),
       method: 'POST',
@@ -88,6 +86,15 @@ class Main extends React.Component {
       .catch(err => console.log(err))
   }
 
+  handleFave = (guide) => {
+    this.state.faves.push(guide)
+    this.setState({faves: this.state.faves})
+    let storedFaves = JSON.parse(localStorage.getItem("faves"))
+    storedFaves.unshift(guide)
+    localStorage.setItem("faves", JSON.stringify(storedFaves))
+    console.log(JSON.parse(localStorage.getItem("faves")));
+  }
+
   // +++++++++++++++++++
   // LIFE CYCLE
   // +++++++++++++++++++
@@ -115,6 +122,7 @@ class Main extends React.Component {
               guide={guide}
               handleView={this.props.handleView}
               handleDelete={this.handleDelete}
+              handleFave={this.handleFave}
             />
           ))
           : <Form
