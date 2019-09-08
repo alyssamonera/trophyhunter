@@ -186,6 +186,7 @@ h4 > span {
 }
 .text-wrap {
   width: 30%;
+  padding-right: 14px;
 }
 .guide-title {
   text-align: left;
