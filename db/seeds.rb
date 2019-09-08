@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Guides.create({
+  "title" => "Jake Peralta",
+  "username" =>"https://imgur.com/TDgdUdZ.png",
+  "body" => "The doctor said all my bleeding was internal -- that's where the blood's supposed to be"
+})
