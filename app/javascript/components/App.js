@@ -34,6 +34,7 @@ class App extends React.Component {
         tags: null,
         id: null
       },
+      faves: []
     }
   }
   // +++++++++++++++++++
@@ -99,6 +100,42 @@ class App extends React.Component {
     })
   }
 
+  fetchFaves = () => {
+    this.setState(prevState => {
+      let faves = JSON.parse(localStorage.getItem("faves"))
+      prevState.faves = faves
+      return {faves: prevState.faves}
+    })
+  }
+
+  handleFave = (guide, action) => {
+    if (action === "add"){
+      this.state.faves.push(guide)
+      this.setState({faves: this.state.faves})
+      let storedFaves = JSON.parse(localStorage.getItem("faves"))
+      storedFaves.unshift(guide)
+      localStorage.setItem("faves", JSON.stringify(storedFaves))
+    } else {
+      this.state.faves = this.removeFave(this.state.faves, guide)
+      this.setState({faves: this.state.faves})
+      let storedFaves = JSON.parse(localStorage.getItem("faves"))
+      storedFaves = this.removeFave(storedFaves, guide)
+      localStorage.setItem("faves", JSON.stringify(storedFaves))
+    }
+
+    console.log(JSON.parse(localStorage.getItem("faves")));
+  }
+
+  removeFave = (array, item) => {
+    let index = array.findIndex(eachItem => eachItem.id === item.id)
+    array.splice(index, 1)
+    return array
+  }
+
+  componentDidMount(){
+    this.fetchFaves()
+  }
+
   // +++++++++++++++++++
   // RENDER
   // +++++++++++++++++++
@@ -109,10 +146,12 @@ class App extends React.Component {
         <div className="content-wrap">
           <Main
             view={this.state.view}
+            faves={this.state.faves}
             handleView={this.handleView}
             formInputs={this.state.formInputs}
-            currentGuide={this.state.currentGuide}/>
-          <Aside handleView={this.handleView}/>
+            currentGuide={this.state.currentGuide}
+            handleFave={this.handleFave} />
+          <Aside handleView={this.handleView} faves={this.state.faves} />
         </div>
         <Footer />
       </div>

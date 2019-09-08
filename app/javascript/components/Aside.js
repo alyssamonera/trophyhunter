@@ -14,10 +14,12 @@ class Aside extends React.Component {
     return (
       <aside>
           <ul className="favorites">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            {this.props.faves.map((fave, index) =>
+            <li key={index}
+                onClick={() => {this.props.handleView("show", fave)}}>
+                  {fave.title}
+            </li>
+          )}
           </ul>
       </aside>
     )
