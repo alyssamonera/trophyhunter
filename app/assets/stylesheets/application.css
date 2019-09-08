@@ -41,7 +41,9 @@ ul, li {
 button {
   font-family: var(--accent-font);
 }
-
+button:hover {
+  cursor: pointer;
+}
 /* ++++++++++++++ */
 /*     HEADER     */
 /* ++++++++++++++ */
@@ -190,10 +192,11 @@ h4 > span {
 }
 .guide-title {
   text-align: left;
-  color: var(--woodsmoke);
+  color: var(--gray);
 }
 .guide-title:hover {
-  color: var(--cyan);
+  text-decoration: underline;
+  cursor: pointer;
 }
 /* ++++++++++++++ */
 /*      SHOW      */
@@ -259,4 +262,14 @@ form label {
 }
 #tags {
   width: 50%;
+}
+textarea {
+  resize: none;
+  font-size: 0.9em;
+  border-radius: 5px;
+  line-height: 23px;
+  overflow: scroll;
+}
+.form input {
+  font-size: 0.9em;
 }
