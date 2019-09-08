@@ -141,7 +141,7 @@ class Form extends Component {
           </div>
         </div><br />
         <label htmlFor="body">Body</label><br />
-        <input type="text" value={this.state.body} id="body" onChange={this.onChange} />
+        <textarea rows="20" cols="60" value={this.state.body} id="body" onChange={this.onChange}></textarea>
          {/*<ReactQuill
            value={this.state.body}
            onChange={this.onChange}
