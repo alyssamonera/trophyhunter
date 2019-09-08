@@ -5,6 +5,7 @@ import React from 'react'
 import Header from './Header.js'
 import Aside from './Aside.js'
 import Main from './Main.js'
+import Footer from './Footer.js'
 
 // +++++++++++++++++++
 // COMPONENT CLASS
@@ -32,7 +33,7 @@ class App extends React.Component {
         image: null,
         tags: null,
         id: null
-      }
+      },
     }
   }
   // +++++++++++++++++++
@@ -113,6 +114,7 @@ class App extends React.Component {
             currentGuide={this.state.currentGuide}/>
           <Aside handleView={this.handleView}/>
         </div>
+        <Footer />
       </div>
     )
   }
