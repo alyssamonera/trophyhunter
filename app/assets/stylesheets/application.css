@@ -191,7 +191,9 @@ h4 > span {
   text-align: left;
   color: var(--woodsmoke);
 }
-
+.guide-title:hover {
+  color: var(--cyan);
+}
 /* ++++++++++++++ */
 /*      SHOW      */
 /* ++++++++++++++ */
