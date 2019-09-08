@@ -58,15 +58,36 @@ header {
   font-size: 2em;
 }
 header > h1 {
-  margin: 0 0 20px 20px;
+  margin: 0 0 5px 20px;
   cursor: pointer;
 }
-.search {
+/* .search {
   margin-right: 20px;
   float: right;
   width: 30%;
   padding: 10px;
   border-radius: 5px;
+} */
+.header-btn {
+  width: 15%;
+  margin: 0 28px 0 0;
+  float: right;
+  line-height: 0;
+}
+.mainpg-btn, .addGuide-btn {
+  border: 1px solid var(--cyan);
+  background: var(--dark-gray);
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+}
+.mainpg-btn {
+  margin-bottom: 5px;
+}
+.mainpg-btn:hover, .addGuide-btn:hover {
+  color: var(--woodsmoke);
+  background: var(--cyan);
 }
 
 /* +++++++++++++++ */
@@ -86,26 +107,7 @@ aside {
   background: var(--dark-gray);
   background-image: linear-gradient(var(--woodsmoke) 40%, var(--lighter-gray));
 }
-.aside-btn > ul {
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
-}
-.mainpg-btn {
-  margin-bottom: 10px;
-}
-.mainpg-btn, .addGuide-btn {
-  border: 1px solid var(--cyan);
-  background: var(--dark-gray);
-  width: 100%;
-  height: 30px;
-  border-radius: 5px;
-  color: white;
-}
-.mainpg-btn:hover, .addGuide-btn:hover {
-  color: var(--woodsmoke);
-  background: var(--cyan);
-}
+
 .tags {
   height: 130px;
   background: var(--breakerbay);

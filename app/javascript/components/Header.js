@@ -14,13 +14,17 @@ class Header extends React.Component {
           {this.props.handleView('index')}}>
             TROPHY HUNTER
         </h1>
-          <form >
-            <input
-              className="search"
-              type="text"
-              placeholder="Search"
-            />
-          </form>
+        <div className="header-btn">
+            <button className="mainpg-btn" onClick={() =>
+              {this.props.handleView('index')}}>
+                BACK TO MAIN PAGE
+            </button>
+            <button className="addGuide-btn" onClick={() =>
+              {this.props.handleView('addGuide')}}>
+                ADD A GUIDE
+            </button>
+
+        </div>
       </header>
     )
   }

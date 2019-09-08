@@ -24,14 +24,11 @@ class Main extends React.Component {
     fetch('/guides')
       .then(data => data.json())
       .then(jData => {
-        console.log(jData)
         this.setState({ guides: jData })
-        console.log(this.state.guides);
       })
   }
 
   addGuide = (guide) => {
-    console.log(guide);
     fetch('/guides', {
       body: JSON.stringify(guide),
       method: 'POST',
@@ -113,8 +110,10 @@ class Main extends React.Component {
             <Post
               key={guide.id}
               guide={guide}
+              faves={this.props.faves}
               handleView={this.props.handleView}
               handleDelete={this.handleDelete}
+              handleFave={this.props.handleFave}
             />
           ))
           : <Form
