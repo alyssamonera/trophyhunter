@@ -108,14 +108,18 @@ aside {
   background-image: linear-gradient(var(--woodsmoke) 40%, var(--lighter-gray));
 }
 
-.tags {
-  height: 130px;
-  background: var(--breakerbay);
+.favorites {
+  cursor: pointer;
+  /* background: var(--breakerbay); */
   text-align: center;
   margin: auto;
-  padding-top: 10px;
-  border-radius: 5px;
+  margin: 30px 10px;
+  padding: 50px, 0;
+  border-radius: 3px;
   color: white;
+}
+.favorites li {
+  margin-bottom: 20px;
 }
 /* ++++++++++++++ */
 /*      MAIN      */
