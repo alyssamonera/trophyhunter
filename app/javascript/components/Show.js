@@ -34,6 +34,7 @@ class Show extends React.Component {
             <li onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>
           </ul>
         </div>
+        boo
       </article>
     )
   }

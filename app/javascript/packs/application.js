@@ -19,8 +19,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from '../components/App';
-// import ReactQuill from 'react-quill';
-// import 'react-quill/dist/quill.snow.css';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 document.addEventListener('DOMContentLoaded', () => {
   render(<App />, document.querySelector('#root'));
