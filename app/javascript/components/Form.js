@@ -83,7 +83,7 @@ class Form extends Component {
   }
 
   componentDidUpdate(prevProps){
-    if(this.props.formInputs.name !== prevProps.formInputs.name) {
+    if(this.props.formInputs.title !== prevProps.formInputs.title) {
       this.setState({
         title: this.props.formInputs.title,
         username: this.props.formInputs.username,
