@@ -13,8 +13,8 @@ class Show extends React.Component {
   // +++++++++++++++++++
   render () {
     return (
-      <article>
-        <div className="guide-image">
+      <article className="show-article">
+        <div className="show-guide-image">
           <img src={this.props.guide.image}/>
         </div><br />
         <div className="guide-title">
