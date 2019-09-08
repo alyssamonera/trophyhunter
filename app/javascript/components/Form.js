@@ -83,7 +83,7 @@ class Form extends Component {
   }
 
   componentDidUpdate(prevProps){
-    if(this.props.formInputs.name !== prevProps.formInputs.name) {
+    if(this.props.formInputs.title !== prevProps.formInputs.title) {
       this.setState({
         title: this.props.formInputs.title,
         username: this.props.formInputs.username,
@@ -140,18 +140,8 @@ class Form extends Component {
           <input type="text" value={this.state.image} id="image" onChange={this.onChange}/>
           </div>
         </div><br />
-        <label htmlFor="body">Body</label>
-        <input type="text" value={this.state.body} id="body" onChange={this.onChange} />
-        {/*<ReactQuill
-           value={this.state.body}
-           onChange={this.onChange}
-           id="body"
-           modules={this.modules}
-<<<<<<< HEAD
-           formats={this.formats} /> */}
-=======
-           formats={this.formats} />*/}
->>>>>>> 76e3c74ee223d1da4cddb48ef60a3e85f36b754e
+        <label htmlFor="body">Body</label><br />
+        <textarea rows="10" cols="80" value={this.state.body} id="body" onChange={this.onChange}></textarea>
         <br />
         <label htmlFor="tags">Tags</label><br />
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
