@@ -2,7 +2,7 @@
 /* ++++++++++++++++ */
 /*      FONTS       */
 /* ++++++++++++++++ */
-@import url('https://fonts.googleapis.com/css?family=Monda|Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Monda:400,700|Open+Sans&display=swap');
 
 
 /* ++++++++++++++++ */
@@ -135,9 +135,8 @@ aside {
 /* ++++++++++++++ */
 main {
   width: 76%;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-right: 280px;
+  margin: 10px 20px 0 20px;
+  padding-bottom: 50px;
 }
 
 /* ++++++++++++++ */
@@ -207,7 +206,9 @@ h4 > span {
 }
 .guide-title {
   text-align: left;
+  font-weight: 700;
   color: var(--gray);
+  line-height: 1.8em;
 }
 .guide-title:hover {
   text-decoration: underline;
