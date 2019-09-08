@@ -102,7 +102,14 @@ class App extends React.Component {
 
   fetchFaves = () => {
     this.setState(prevState => {
-      let faves = JSON.parse(localStorage.getItem("faves"))
+      let faves
+      if (JSON.parse(localStorage.getItem("faves"))){
+        faves = JSON.parse(localStorage.getItem("faves"))
+      } else {
+        faves = []
+        let jsonedFaves = JSON.stringify(faves)
+        localStorage.setItem("faves", jsonedFaves)
+      }
       prevState.faves = faves
       return {faves: prevState.faves}
     })

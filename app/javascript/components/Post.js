@@ -26,7 +26,9 @@ class Post extends React.Component {
   }
 
   componentDidMount(){
-    this.checkAdded()
+    if (JSON.parse(localStorage.getItem("faves"))){
+      this.checkAdded()      
+    }
   }
 
   // +++++++++++++++++++
