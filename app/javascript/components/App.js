@@ -32,7 +32,7 @@ class App extends React.Component {
         image: null,
         tags: null,
         id: null
-      }
+      },
     }
   }
   // +++++++++++++++++++
