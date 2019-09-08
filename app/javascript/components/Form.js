@@ -147,7 +147,11 @@ class Form extends Component {
            onChange={this.onChange}
            id="body"
            modules={this.modules}
+<<<<<<< HEAD
            formats={this.formats} /> */}
+=======
+           formats={this.formats} />*/}
+>>>>>>> 76e3c74ee223d1da4cddb48ef60a3e85f36b754e
         <br />
         <label htmlFor="tags">Tags</label><br />
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
