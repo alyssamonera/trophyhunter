@@ -8,6 +8,22 @@ import Show from './Show.js';
 // COMPONENT CLASS
 // +++++++++++++++++++
 class Post extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      added: false
+    }
+  }
+
+  componentDidMount(){
+    let faves = JSON.parse(localStorage.getItem("faves"))
+    let index = faves.findIndex(fave => fave.id === this.props.guide.id)
+    let added
+    if (index >= 0) {added = true} else {added = false}
+    this.setState({
+      added: added
+    })
+  }
 
   // +++++++++++++++++++
   // RENDER
@@ -38,7 +54,18 @@ class Post extends React.Component {
         </div>
           <div className="guide-buttons">
             <ul>
-              <li onClick={()=> {this.props.handleFave(this.props.guide)}}>ADD TO FAVORITES</li>
+
+              {this.state.added
+                ?
+                <li>
+                  REMOVE FAVORITE
+                </li>
+                :
+                <li onClick={()=> {this.props.handleFave(this.props.guide)}}>
+                  ADD TO FAVORITES
+                </li>
+              }
+
               <li className="edit-btn" onClick={() => {this.props.handleView('editGuide', this.props.guide)}}>EDIT GUIDE</li>
               <li onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>
             </ul>

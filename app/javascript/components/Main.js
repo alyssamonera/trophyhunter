@@ -110,6 +110,7 @@ class Main extends React.Component {
             <Post
               key={guide.id}
               guide={guide}
+              faves={this.props.faves}
               handleView={this.props.handleView}
               handleDelete={this.handleDelete}
               handleFave={this.props.handleFave}

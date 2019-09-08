@@ -101,10 +101,11 @@ class App extends React.Component {
   }
 
   fetchFaves = () => {
-    let faves = JSON.parse(localStorage.getItem("faves"))
-    this.state.faves = faves
-    this.setState({faves: this.state.faves})
-    console.log(this.state.faves);
+    this.setState(prevState => {
+      let faves = JSON.parse(localStorage.getItem("faves"))
+      prevState.faves = faves
+      return {faves: prevState.faves}
+    })
   }
 
   handleFave = (guide) => {
@@ -130,6 +131,7 @@ class App extends React.Component {
         <div className="content-wrap">
           <Main
             view={this.state.view}
+            faves={this.state.faves}
             handleView={this.handleView}
             formInputs={this.state.formInputs}
             currentGuide={this.state.currentGuide}
