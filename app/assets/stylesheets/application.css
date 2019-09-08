@@ -289,13 +289,18 @@ textarea {
 footer {
   text-align: center;
   font-size: 12px;
-  padding-top:0px;
-  /* position:fixed; */
   bottom:0;
   left:0;
   width:100%;
   height: 100px;
-  padding-top: 20px;
-  background: var(--woodsmoke);
   color: white;
+}
+.footer-names {
+  background: var(--gray);
+  padding: 20px 0;
+}
+.copy {
+  background: var(--lighter-gray);
+  height: 40px;
+  padding-top: 20px;
 }
