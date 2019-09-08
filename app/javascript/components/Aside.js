@@ -13,7 +13,7 @@ class Aside extends React.Component {
   render () {
     return (
       <aside>
-          <ul className="favorites">
+          <ul className="favorites dropdown">
             {this.props.faves.map((fave, index) =>
             <li key={index}
                 onClick={() => {this.props.handleView("show", fave)}}>

@@ -393,5 +393,30 @@ footer {
   .mainpg-btn {
     margin-bottom: 10px;
   }
+  aside {
+    width: 100%;
+    float: none;
+    position: relative;
+    height: 50px;
+    display: inline-block;
+    position: fixed;
+    font-family: var(--accent-font);
+    text-align: left;
+    margin: 0;
+    background: var(--dark-gray);
+    background-image: linear-gradient(var(--woodsmoke) 40%, var(--lighter-gray));
+  }
+  .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    display: none;
+  }
+  .dropdown li {
+    display: block;
+  }
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
 
 }
