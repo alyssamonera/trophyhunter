@@ -27,7 +27,7 @@ class Post extends React.Component {
 
   componentDidMount(){
     if (JSON.parse(localStorage.getItem("faves"))){
-      this.checkAdded()      
+      this.checkAdded()
     }
   }
 
@@ -63,11 +63,11 @@ class Post extends React.Component {
 
               {this.state.added
                 ?
-                <li onClick={()=> {this.props.handleFave(this.props.guide, "remove"); this.checkAdded()}}>
+                <li className="fav-btn" onClick={()=> {this.props.handleFave(this.props.guide, "remove"); this.checkAdded()}}>
                   REMOVE FAVORITE
                 </li>
                 :
-                <li onClick={()=> {this.props.handleFave(this.props.guide, "add"); this.checkAdded()}}>
+                <li className="fav-btn" onClick={()=> {this.props.handleFave(this.props.guide, "add"); this.checkAdded()}}>
                   ADD TO FAVORITES
                 </li>
               }
