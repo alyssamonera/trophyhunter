@@ -34,6 +34,7 @@ class App extends React.Component {
         tags: null,
         id: null
       },
+      faves: []
     }
   }
   // +++++++++++++++++++
@@ -99,6 +100,26 @@ class App extends React.Component {
     })
   }
 
+  fetchFaves = () => {
+    let faves = JSON.parse(localStorage.getItem("faves"))
+    this.state.faves = faves
+    this.setState({faves: this.state.faves})
+    console.log(this.state.faves);
+  }
+
+  handleFave = (guide) => {
+    this.state.faves.push(guide)
+    this.setState({faves: this.state.faves})
+    let storedFaves = JSON.parse(localStorage.getItem("faves"))
+    storedFaves.unshift(guide)
+    localStorage.setItem("faves", JSON.stringify(storedFaves))
+    console.log(JSON.parse(localStorage.getItem("faves")));
+  }
+
+  componentDidMount(){
+    this.fetchFaves()
+  }
+
   // +++++++++++++++++++
   // RENDER
   // +++++++++++++++++++
@@ -111,8 +132,9 @@ class App extends React.Component {
             view={this.state.view}
             handleView={this.handleView}
             formInputs={this.state.formInputs}
-            currentGuide={this.state.currentGuide}/>
-          <Aside handleView={this.handleView}/>
+            currentGuide={this.state.currentGuide}
+            handleFave={this.handleFave} />
+          <Aside handleView={this.handleView} faves={this.state.faves} />
         </div>
         <Footer />
       </div>
