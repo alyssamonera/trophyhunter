@@ -3,7 +3,7 @@
 // ======================
 // Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
-// import ReactQuill from 'react-quill';
+// import ReactQuill from 'react-quill'; COMMIT
 
 class Form extends Component {
   constructor(){
@@ -142,12 +142,6 @@ class Form extends Component {
         </div><br />
         <label htmlFor="body">Body</label><br />
         <textarea rows="10" cols="80" value={this.state.body} id="body" onChange={this.onChange}></textarea>
-         {/*<ReactQuill
-           value={this.state.body}
-           onChange={this.onChange}
-           id="body"
-           modules={this.modules}
-           formats={this.formats} />*/}
         <br />
         <label htmlFor="tags">Tags</label><br />
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
