@@ -108,13 +108,28 @@ class App extends React.Component {
     })
   }
 
-  handleFave = (guide) => {
-    this.state.faves.push(guide)
-    this.setState({faves: this.state.faves})
-    let storedFaves = JSON.parse(localStorage.getItem("faves"))
-    storedFaves.unshift(guide)
-    localStorage.setItem("faves", JSON.stringify(storedFaves))
+  handleFave = (guide, action) => {
+    if (action === "add"){
+      this.state.faves.push(guide)
+      this.setState({faves: this.state.faves})
+      let storedFaves = JSON.parse(localStorage.getItem("faves"))
+      storedFaves.unshift(guide)
+      localStorage.setItem("faves", JSON.stringify(storedFaves))
+    } else {
+      this.state.faves = this.removeFave(this.state.faves, guide)
+      this.setState({faves: this.state.faves})
+      let storedFaves = JSON.parse(localStorage.getItem("faves"))
+      storedFaves = this.removeFave(storedFaves, guide)
+      localStorage.setItem("faves", JSON.stringify(storedFaves))
+    }
+
     console.log(JSON.parse(localStorage.getItem("faves")));
+  }
+
+  removeFave = (array, item) => {
+    let index = array.findIndex(eachItem => eachItem.id === item.id)
+    array.splice(index, 1)
+    return array
   }
 
   componentDidMount(){

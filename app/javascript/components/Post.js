@@ -15,7 +15,7 @@ class Post extends React.Component {
     }
   }
 
-  componentDidMount(){
+  checkAdded = () => {
     let faves = JSON.parse(localStorage.getItem("faves"))
     let index = faves.findIndex(fave => fave.id === this.props.guide.id)
     let added
@@ -23,6 +23,10 @@ class Post extends React.Component {
     this.setState({
       added: added
     })
+  }
+
+  componentDidMount(){
+    this.checkAdded()
   }
 
   // +++++++++++++++++++
@@ -57,11 +61,11 @@ class Post extends React.Component {
 
               {this.state.added
                 ?
-                <li>
+                <li onClick={()=> {this.props.handleFave(this.props.guide, "remove"); this.checkAdded()}}>
                   REMOVE FAVORITE
                 </li>
                 :
-                <li onClick={()=> {this.props.handleFave(this.props.guide)}}>
+                <li onClick={()=> {this.props.handleFave(this.props.guide, "add"); this.checkAdded()}}>
                   ADD TO FAVORITES
                 </li>
               }
