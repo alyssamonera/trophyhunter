@@ -3,7 +3,7 @@
 // ======================
 // Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
-// import ReactQuill from 'react-quill';
+// import ReactQuill from 'react-quill'; COMMIT
 
 class Form extends Component {
   constructor(){
