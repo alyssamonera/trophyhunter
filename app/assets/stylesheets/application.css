@@ -197,6 +197,7 @@ h4 > span {
   text-decoration: underline;
   cursor: pointer;
 }
+
 /* ++++++++++++++ */
 /*      SHOW      */
 /* ++++++++++++++ */
@@ -213,6 +214,7 @@ h4 > span {
 h3 > span {
   color: var(--breakerbay);
 }
+
 /* ++++++++++++++ */
 /*      FORM      */
 /* ++++++++++++++ */
@@ -273,4 +275,27 @@ textarea {
 .form {
   width: 90%;
   margin: 0 auto;
+}
+
+/* ++++++++++++++++ */
+/*      FOOTER      */
+/* ++++++++++++++++ */
+/* .wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+} */
+footer {
+  text-align: center;
+  font-size: 12px;
+  padding-top:0px;
+  /* position:fixed; */
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 100px;
+  padding-top: 20px;
+  background: var(--woodsmoke);
+  color: white;
 }
