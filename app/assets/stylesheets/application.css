@@ -110,7 +110,6 @@ aside {
 
 .favorites {
   cursor: pointer;
-  /* background: var(--breakerbay); */
   text-align: center;
   margin: auto;
   margin: 30px 10px;
@@ -121,6 +120,10 @@ aside {
 .favorites li {
   margin-bottom: 20px;
 }
+.favorites li:hover {
+  color: var(--cyan);
+}
+
 /* ++++++++++++++ */
 /*      MAIN      */
 /* ++++++++++++++ */
