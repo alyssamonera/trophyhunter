@@ -38,6 +38,7 @@ class Post extends React.Component {
         </div>
           <div className="guide-buttons">
             <ul>
+              <li onClick={()=> {this.props.handleFave(this.props.guide)}}>ADD TO FAVORITES</li>
               <li className="edit-btn" onClick={() => {this.props.handleView('editGuide', this.props.guide)}}>EDIT GUIDE</li>
               <li onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>
             </ul>
