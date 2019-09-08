@@ -248,6 +248,7 @@ form input[type=submit] {
   width: 92%;
   padding: 10px;
   border-radius: 5px;
+  font-size: 0.9em;
 }
 form label {
   font-family: var(--accent-font);
@@ -270,6 +271,7 @@ textarea {
   line-height: 23px;
   overflow: scroll;
 }
-.form input {
-  font-size: 0.9em;
+.form {
+  width: 90%;
+  margin: 0 auto;
 }
