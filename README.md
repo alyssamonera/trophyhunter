@@ -47,10 +47,13 @@ This app allows users to publish and share their own guides for specific video g
 
 * Users will be able to add game guides.
 * Users will be able to view a list of available game guides.
-* Users will be able to click on any game guide to view more information. 
+* Users will be able to click on any game guide to view more information.
 * Users will be able to edit and delete their guides.
 * Users will be able to save guides as favorites. (They will be displayed in the sidebar.)
 
 ## Challenges
 
 ## Future Improvements
+
+* search bar
+* authentication

@@ -105,6 +105,7 @@ class Main extends React.Component {
               guide={this.props.currentGuide}
               handleDelete={this.handleDelete}
               handleView={this.props.handleView}
+              handleFave={this.props.handleFave}
           />
         : this.props.view.page === 'index'
           ? this.state.guides.map(guide => (
