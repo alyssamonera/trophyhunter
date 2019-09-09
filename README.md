@@ -24,7 +24,7 @@ Things you may want to cover:
 * ... -->
 
 # TROPHY HUNTER
-link to live site: https://trophyhunter.herokuapp.com//
+link to live site: https://trophyhunter.herokuapp.com/
 
 ## Collaborators
 * **Alyssa Monera**
@@ -45,7 +45,7 @@ link to live site: https://trophyhunter.herokuapp.com//
 
 ## User Stories
 
-* 
+*
 
 
 ## Challenges
