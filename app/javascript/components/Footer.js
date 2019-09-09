@@ -11,7 +11,7 @@ class Footer extends React.Component {
     return (
       <footer className="footer" >
             <div className="footer-names">
-              <span>Alyssa Monera&nbsp;&nbsp;</span><i class='fa fa-trophy'></i>
+              <span>Alyssa Monera&nbsp;&nbsp;</span><i className='fa fa-trophy'></i>
               <span>&nbsp;&nbsp;Jiha Hwang</span><br />
             </div>
             <div className="copy">© 2019 Copyright</div>
