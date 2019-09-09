@@ -30,11 +30,17 @@ link to live site: https://trophyhunter.herokuapp.com//
 * **Alyssa Monera**
 * **Jiha Hwang**
 
-
 ## About
 
 
-## Wireframes & Screenshots
+## Tech used
+
+* Rails
+* React
+* PostgreSQL
+
+
+## Wireframes
 
 
 ## User Stories
@@ -45,12 +51,3 @@ link to live site: https://trophyhunter.herokuapp.com//
 ## Challenges
 
 ## Future Improvements
-
-## Deployment
-
-* 
-
-## Tech used
-
-* Ruby on Rails
-* React
