@@ -224,6 +224,7 @@ h4 > span {
 .show-article {
   width: 60%;
   text-align: justify;
+  line-height: 2.5em;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -289,7 +290,7 @@ textarea {
   resize: none;
   font-size: 0.9em;
   border-radius: 5px;
-  line-height: 23px;
+  line-height: 30px;
   overflow: scroll;
 }
 .form {
