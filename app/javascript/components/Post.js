@@ -39,9 +39,12 @@ class Post extends React.Component {
       <article className="post-article">
         <div className="guide-contents-wrap">
           <div className="text-wrap">
-            <div className="guide-title">
+            <div className={this.state.added ? "fave-title" : "guide-title"}>
               <h1 onClick={() => {this.props.handleView('show',
-              this.props.guide)}}>{this.props.guide.title}</h1>
+              this.props.guide)}}>
+                {this.state.added ? "♥ " : ""}
+                {this.props.guide.title}
+              </h1>
             </div>
             <div className="guide-user">
               <h4>Uploaded by <span>{this.props.guide.username}</span></h4>

@@ -129,8 +129,6 @@ class App extends React.Component {
       storedFaves = this.removeFave(storedFaves, guide)
       localStorage.setItem("faves", JSON.stringify(storedFaves))
     }
-
-    console.log(JSON.parse(localStorage.getItem("faves")));
   }
 
   removeFave = (array, item) => {
