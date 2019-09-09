@@ -45,7 +45,7 @@ link to live site: https://trophyhunter.herokuapp.com//
 
 ## User Stories
 
-*
+* 
 
 
 ## Challenges
