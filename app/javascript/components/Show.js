@@ -28,7 +28,7 @@ class Show extends React.Component {
         <div className="guide-tags">
           <h4>{this.props.guide.tags}</h4>
         </div><br />
-        <div className="guide-buttons">
+        <div className="show-guide-buttons">
           <ul>
             <li onClick={() => {this.props.handleView('editGuide', this.props.guide)}}>EDIT GUIDE</li>
             <li onClick={() => {this.props.handleDelete(this.props.guide.id)}}>DELETE GUIDE</li>

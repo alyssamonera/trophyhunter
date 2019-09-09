@@ -558,7 +558,10 @@ footer {
   h3 > span {
     color: var(--breakerbay);
   }
-
+  .show-guide-edit-btn {
+    margin-right: 5px;
+  }
+  
 }
 
 
