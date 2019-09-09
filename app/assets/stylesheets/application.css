@@ -148,7 +148,7 @@ main {
   /* color: white; */
   text-align: justify;
   margin-top: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   box-sizing: border-box;
   transition: 0.3s;
   border-radius: 5px;
@@ -158,7 +158,7 @@ h4 > span {
   color: var(--breakerbay);
 }
 .post-article:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }
 .guide-buttons {
   width: 50%;
