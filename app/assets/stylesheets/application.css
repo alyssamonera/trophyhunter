@@ -206,7 +206,7 @@ h4 > span {
   width: 30%;
   padding-right: 14px;
 }
-.guide-title {
+.guide-title, .fave-title {
   text-align: left;
   font-weight: 700;
   color: white;
@@ -215,7 +215,7 @@ h4 > span {
   line-height: 1.8em;
   border-radius: 5px;
 }
-.guide-title:hover {
+.guide-title:hover, .fave-title:hover {
   text-decoration: underline;
   cursor: pointer;
 }
