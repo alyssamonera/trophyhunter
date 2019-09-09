@@ -38,9 +38,7 @@ This app allows users to publish and share their own guides for specific video g
 * Rails
 * React
 * PostgreSQL
-
-
-## Wireframes
+* Local storage
 
 
 ## User Stories
@@ -52,8 +50,11 @@ This app allows users to publish and share their own guides for specific video g
 * Users will be able to save guides as favorites. (They will be displayed in the sidebar.)
 
 ## Challenges
+* We tried to implement a rich-text editor, but there was something in the code for the tool (react-quill) that worked in development but not in production. We ended up just using a regular textarea. That being said, we did manage to make each post render as HTML, so we could have line breaks in each post.
+* Figuring out how to display a show page also took some time. We ended up mixing in some of the earlier lessons with the most recent grapevine lesson - adding a currentGuide object to the app on top of a guide array.
 
 ## Future Improvements
-
-* search bar
-* authentication
+* Working tags
+* Rich text editor
+* Search bar
+* Authentication
