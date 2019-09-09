@@ -12,7 +12,7 @@ class Aside extends React.Component {
   // +++++++++++
   render () {
     return (
-      <aside>
+      <aside>FAVORITES
           <ul className="favorites">
             {this.props.faves.map((fave, index) =>
             <li key={index}
