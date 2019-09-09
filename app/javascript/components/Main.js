@@ -39,6 +39,7 @@ class Main extends React.Component {
     })
       .then(createdGuide => {return createdGuide.json()})
       .then(jsonedGuide => {
+        console.log(guide);
         this.props.handleView('index')
         this.setState(prevState => {
           prevState.guides.unshift(jsonedGuide)

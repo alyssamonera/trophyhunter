@@ -11,6 +11,7 @@ class GuidesController < ApplicationController
 
   def create
     params["guide"]["body"].gsub! "'", "''"
+    params["guide"]["body"].gsub!(/\n/, '<br/>')
     params["guide"]["tags"].gsub! "'", "''"
     render json: Guide.create(params["guide"])
   end
@@ -21,6 +22,7 @@ class GuidesController < ApplicationController
 
   def update
     params["guide"]["body"].gsub! "'", "''"
+    params["guide"]["body"].gsub!(/\n/, '<br/>')
     params["guide"]["tags"].gsub! "'", "''"
     render json: Guide.update(params["id"], params["guide"])
   end
