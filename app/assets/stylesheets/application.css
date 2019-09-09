@@ -363,6 +363,9 @@ footer {
     margin: 0 auto;
     margin-top: 20px;
   }
+  textarea {
+    width: 100%;
+  }
 
 }
 
@@ -581,7 +584,7 @@ footer {
   }
   main > h1 {
     line-height: 1em;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   .mainpg-btn, .addGuide-btn {
     border: 1px solid var(--cyan);
@@ -595,22 +598,26 @@ footer {
     margin-bottom: 10px;
   }
   aside {
-    width: 50%;
+    font-family: var(--accent-font);
+    color: white;
+    width: 38%;
     float: none;
     position: relative;
-    height: 50px;
+    height: 30px;
     display: inline-block;
     position: fixed;
-    font-family: var(--accent-font);
-    text-align: left;
+    text-align: center;
     margin: 0;
-    background: var(--dark-gray);
-    background-image: linear-gradient(var(--woodsmoke) 40%, var(--lighter-gray));
+    background: var(--lighter-gray);
   }
   .favorites {
     background: var(--dark-gray);
+    margin: 0;
+    padding-top: 10px;
+    width: 100%;
   }
   .favorites li {
+    font-size: 0.8em;
     display: block;
     background: var(--dark-gray);
   }
@@ -631,6 +638,7 @@ footer {
   }
   .guide-contents-wrap {
     width: 100%;
+    height: 200px;
     display: flex;
     flex-direction: column;
   }
@@ -639,7 +647,7 @@ footer {
     font-size: 0.8em;
   }
   .post-article {
-    height: 260px;
+    height: 250px;
     margin: 5px 5px;
     padding: 0;
   }
