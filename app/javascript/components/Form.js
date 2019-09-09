@@ -3,7 +3,8 @@
 // ======================
 // Quill package from: https://www.npmjs.com/package/react-quill
 import React, {Component} from 'react';
-// import ReactQuill from 'react-quill'; COMMIT
+// import ReactQuill from 'react-quill';
+import Show from './Show.js';
 
 class Form extends Component {
   constructor(){
@@ -99,21 +100,21 @@ class Form extends Component {
   // QUILL-SPECIFIC THINGS
   // ======================
 
-  modules = {
-    toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image']
-    ],
-  }
-
-  formats = [
-    'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image'
-  ]
+  // modules = {
+  //   toolbar: [
+  //     [{ 'header': [1, 2, false] }],
+  //     ['bold', 'italic', 'underline','strike', 'blockquote'],
+  //     [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+  //     ['link', 'image']
+  //   ],
+  // }
+  //
+  // formats = [
+  //   'header',
+  //   'bold', 'italic', 'underline', 'strike', 'blockquote',
+  //   'list', 'bullet', 'indent',
+  //   'link', 'image'
+  // ]
 
   // ======================
   //        RENDER
@@ -141,7 +142,7 @@ class Form extends Component {
           </div>
         </div><br />
         <label htmlFor="body">Body</label><br />
-        <textarea rows="10" cols="80" value={this.state.body} id="body" onChange={this.onChange}></textarea>
+        <textarea rows="10" cols="80" value={this.state.body} id="body" onChange={this.onChange} ref="myTextarea"></textarea>
         <br />
         <label htmlFor="tags">Tags</label><br />
         <input type="text" value={this.state.tags} id="tags" onChange={this.onChange}/><br /><br />
